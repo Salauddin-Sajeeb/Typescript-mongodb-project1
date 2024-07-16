@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 
 export type guardian =
 {
@@ -24,9 +25,15 @@ export type Student =
  {
     name:Username, 
     id: string,
+    user:Types.ObjectId,
+    password:string,
     gender: "male" |"female",
     email:string,
     guardian:guardian, 
     LocalGuardian:LocalGuardian;
-    Mobile:string;
-  }
+    Mobile:string,
+    isDeleted:boolean, 
+    admissionSemester: Types.ObjectId;
+    academicDepartment: Types.ObjectId;
+
+  } 
